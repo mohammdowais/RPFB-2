@@ -7,7 +7,7 @@ class Login extends Component {
         
             <div className="col-12">
                 <label for="firstname" className="form-label ">Name:</label>
-                <input type="text" className="form-control mb-3" id="firstname" placeholder='James Bond...' pattern="[a-zA-Z ]{3-20}"/>
+                <input type="text" className="form-control mb-3" id="firstname" placeholder='James Bond...' pattern="[a-zA-Z ]{3-50}"/>
             </div>
         
         
