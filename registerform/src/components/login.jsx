@@ -3,11 +3,15 @@ import React, { Component } from 'react'
 class Login extends Component {
   render() {
     return (
-      <form className="row w-25 gy-3 bg-light p-3 mx-auto mt-5 rounded=">
+      <form className="row w-25 gy-3 bg-light p-3 mx-auto mt-5 rounded">
         
-            <div className="col-12">
-                <label for="firstname" className="form-label ">Name:</label>
-                <input type="text" className="form-control mb-3" id="firstname" placeholder='James Bond...' pattern="[a-zA-Z ]{3,50}"/>
+            <div className="col-6">
+                <label for="firstname" className="form-label ">First Name:</label>
+                <input type="text" className="form-control mb-2" id="firstname" placeholder='James' pattern="[a-zA-Z ]{3,50}" required/>
+            </div>
+            <div className="col-6">
+                <label for="lastname" className="form-label "> Last Name:</label>
+                <input type="text" className="form-control mb-2" id="lastname" placeholder='Bond' pattern="[a-zA-Z ]{3,50}" required/>
             </div>
         
         
