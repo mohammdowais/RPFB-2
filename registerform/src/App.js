@@ -4,7 +4,9 @@ import Header from './components/header';
 import RegistrationForm from './components/registrationForm';
 import Login from './components/login';
 import Signup from './components/signup';
+// import Signup2 from './components/signup2';
 import Profile from './components/angelprofile';
+import ChangePass from './components/changepassword'
 
 function App() {
   return (
@@ -12,8 +14,9 @@ function App() {
       <Header/>
       {/* <RegistrationForm/>  */}
       {/* <Login/> */}
+      <ChangePass/>
       {/* <Signup/> */}
-      <Profile/>
+      {/* <Profile/> */}
     </div>
   );
 }
