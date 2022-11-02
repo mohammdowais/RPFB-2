@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <RegistrationForm/> 
+      {/* <RegistrationForm/>  */}
       {/* <Login/> */}
       {/* <ChangePass/> */}
       {/* <Signup/> */}
