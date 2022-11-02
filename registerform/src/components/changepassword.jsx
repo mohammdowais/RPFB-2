@@ -33,7 +33,20 @@ export default function ConfirmPassword() {
   const formSchema = Yup.object().shape({
     password: Yup.string()
       .required('Password is mendatory')
-      .min(5, 'Password must be at 3 char long'),
+      .max(32,'Password should be less than 32 characters')
+      .matches(
+        /[.*[A-Z].*]{0,}/,
+        "Must Contain at least one Uppercase Character"
+      )
+      .matches(
+        /[.*[a-z].*]{0,}/,
+        "Must Contain at least one Lowercase Character"
+      )
+      .matches(
+        /[.*[0-9].*]{0,}/,
+        "Must Contain at least one Number Character"
+      )
+      .min(5, 'Password must be at 5 char long'),
     confirmPwd: Yup.string()
       .required('Password is mendatory')
       .oneOf([Yup.ref('password')], 'Passwords does not match'),
@@ -55,6 +68,7 @@ export default function ConfirmPassword() {
             type="password"
             {...register('password')}
             className={`form-control ${errors.password ? 'is-invalid' : ''}`}
+            placeholder="Enter New password"
           />
           <div className="invalid-feedback">{errors.password?.message}</div>
         </div>
@@ -65,6 +79,7 @@ export default function ConfirmPassword() {
             type="password"
             {...register('confirmPwd')}
             className={`form-control ${errors.confirmPwd ? 'is-invalid' : ''}`}
+            placeholder="Confirm New password"
           />
           <div className="invalid-feedback">{errors.confirmPwd?.message}</div>
         </div>
