@@ -14,8 +14,8 @@ function App() {
       <Header/>
       {/* <RegistrationForm/>  */}
       {/* <Login/> */}
-      <ChangePass/>
-      {/* <Signup/> */}
+      {/* <ChangePass/> */}
+      <Signup/>
       {/* <Profile/> */}
     </div>
   );
