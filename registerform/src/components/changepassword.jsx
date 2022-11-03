@@ -61,6 +61,7 @@ export default function ConfirmPassword() {
   return (
     <div >
       <form onSubmit={handleSubmit(onSubmit)} className="row w-25 gy-3 bg-light p-3 mx-auto mt-5 rounded">
+      <h5 className='form-group col-12 mb-3'>Change Your Password</h5>
         <div className="form-group col-12">
           <label>Password</label>
           <input
@@ -76,7 +77,7 @@ export default function ConfirmPassword() {
           <label>Confirm Password</label>
           <input
             name="confirmPwd"
-            type="password"
+            type="text"
             {...register('confirmPwd')}
             className={`form-control ${errors.confirmPwd ? 'is-invalid' : ''}`}
             placeholder="Confirm New password"
