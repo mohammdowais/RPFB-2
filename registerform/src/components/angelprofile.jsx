@@ -4,10 +4,14 @@ class Profile extends Component{
     render(){
         return(
             <div>
-                <div className="grid-container">
-                    <div className="item1">Menu</div>
-                    <div className="item2">Main</div>  
-                    <div className="item3">Footer</div>
+                <div className="row">
+                    <div className="col-4 bg-light">Menu</div>
+                    <div className="col-8 bg-light">
+                        <div className="row">
+                            <div className="col-8 bg-light">Main</div>  
+                            <div className="col-8 bg-light">Footer</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         )
