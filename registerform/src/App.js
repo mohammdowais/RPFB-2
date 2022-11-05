@@ -7,6 +7,7 @@ import Signup from './components/signup';
 import Profile from './components/angelprofile';
 import ChangePass from './components/changepassword';
 import Temp from './components/temp'
+import UpdateProfile from './components/updateprofile';
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
       {/* <Signup/> */}
       {/* <Login/> */}
       {/* <ChangePass/> */}
-      <Profile/>
+      {/* <Profile/> */}
+      <UpdateProfile/>
     </div>
   );
 }
