@@ -29,7 +29,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
-export default function ConfirmPassword() {
+export default function ChangePass() {
   const formSchema = Yup.object().shape({
     password: Yup.string()
       .required('Password is mendatory')
@@ -61,7 +61,9 @@ export default function ConfirmPassword() {
   return (
     <div >
       <form onSubmit={handleSubmit(onSubmit)} className="row w-25 gy-3 bg-light p-3 mx-auto mt-5 rounded">
-      <h5 className='form-group col-12 mb-3'>Change Your Password</h5>
+          <div className="form-group col-12 mb-3 mt-3">
+              <h4>Change Password</h4>
+           </div>
         <div className="form-group col-12">
           <label>Password</label>
           <input
