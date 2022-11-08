@@ -16,10 +16,10 @@ function App() {
       {/* <RegistrationForm/>  */}
       {/* <Temp/> */}
       {/* <Signup/> */}
-      {/* <Login/> */}
+      <Login/>
       {/* <ChangePass/> */}
       {/* <Profile/> */}
-      <UpdateProfile/>
+      {/* <UpdateProfile/> */}
     </div>
   );
 }
