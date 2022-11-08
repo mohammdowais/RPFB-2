@@ -1,6 +1,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
+import LoginService from '../services/LoginService'
 import * as Yup from 'yup'
 
 
@@ -40,7 +41,9 @@ export default function Temp() {
   const { register, handleSubmit, reset, formState } = useForm(formOptions)
   const { errors } = formState
   function onSubmit(data) {
-    console.log(JSON.stringify(data, null, 4))
+    // console.log(JSON.stringify(data, null, 4))
+    console.log(data)
+    LoginService.postRequestData(data);
     return false
   }
   return (

@@ -1,10 +1,18 @@
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+import axios from 'axios'
 const ANGEL_POST_URL ="";
 
 class LoginService{
     postRequestData(angel){
-        return ({
+        console.log(angel)
+        return axios({
+            method:'post',
+            url:ANGEL_POST_URL,
+            data:{
+                email:angel.email,
+                password:angel.password
+            }
 
         })
     }
 }
+export default new LoginService()
