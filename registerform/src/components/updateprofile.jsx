@@ -66,7 +66,12 @@ export default function UpdateProfile() {
                         <div className="col-12">
                             <div className="row mb-3">
                                 <div className="col-sm-12 text-center">
-                                    <h4 className="mt-2">Detective</h4>
+                                    <h4 className="mt-2">Sherlock Holmes</h4>
+                                </div>
+                            </div>
+                            <div className="row mb-3">
+                                <div className="col-sm-12 text-center">
+                                    <h5 className="mt-2">Detective</h5>
                                 </div>
                             </div>
                             <div className="row mb-3">
