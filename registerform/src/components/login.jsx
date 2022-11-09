@@ -48,7 +48,7 @@ export default function Login() {
   }
   return (
     <div >
-      <form onSubmit={handleSubmit(onSubmit)} className="row w-25 gy-3 bg-light p-3 mx-auto mt-5 rounded  novalidate">
+      <form onSubmit={handleSubmit(onSubmit)} className="row w-25 gy-3 border bg-light border-primary p-3 mx-auto mt-5 rounded  novalidate">
           <div className="form-group col-12 mb-3 mt-3">
               <h4>Login</h4>
            </div>
