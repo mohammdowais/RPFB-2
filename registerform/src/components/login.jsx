@@ -80,7 +80,7 @@ export default function Login() {
         </div>
         <div className="col-12">
           <button type="submit" className="btn btn-primary btn-block">
-            Submit
+            Login
           </button>
         </div>
       </form>

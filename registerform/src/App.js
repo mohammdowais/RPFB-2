@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from '../src/components/images/Esdlogo.png';
 import './App.css';
 import Header from './components/header';
 import RegistrationForm from './components/registrationForm';
@@ -19,9 +19,11 @@ import {
 function App() {
   return(
     <Router>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light ">
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">Reform Portal</a>
+        <a className="navbar-brand" href="/">
+        <img src={logo} alt="logo" className="w-25 h-25 "/>
+        </a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
