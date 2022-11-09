@@ -1,5 +1,5 @@
 import axios from 'axios'
-const ANGEL_POST_URL ="";
+const ANGEL_POST_URL ="http://localhost:8080/api/loginhelper/login";
 
 class LoginService{
     postRequestData(angel){
@@ -9,7 +9,7 @@ class LoginService{
             url:ANGEL_POST_URL,
             data:{
                 email:angel.email,
-                password:angel.password
+                pasword:angel.password
             }
 
         })
