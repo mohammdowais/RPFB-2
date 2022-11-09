@@ -1,86 +1,52 @@
-import React from 'react'
-import { useForm } from 'react-hook-form'
-import { yupResolver } from '@hookform/resolvers/yup'
-import * as Yup from 'yup'
-
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+import Signup from "./signup";
+import Login from "./login"
+import Home from "./home"
 
 export default function Temp() {
-  const formSchema = Yup.object().shape({
-    password: Yup.string()
-      .required('Password is mendatory')
-      .max(32,'Password should be less than 32 characters')
-      .matches(
-        /[.*[A-Z].*]{0,}/,
-        "Must Contain at least one Uppercase Character"
-      )
-      .matches(
-        /[.*[a-z].*]{0,}/,
-        "Must Contain at least one Lowercase Character"
-      )
-      .matches(
-        /[.*[0-9].*]{0,}/,
-        "Must Contain at least one Number Character"
-      )
-      .min(5, 'Password must be at 5 char long'),
-
-
-    email: Yup.string()
-      .required('Email is mendatory')
-      .matches(
-        /@/,
-        "Must have @ "
-      )
-      .matches(
-        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-        "Please Enter a valid email"
-      )
-    //   .oneOf([Yup.ref('password')], 'Passwords does not match'),
-  })
-  const formOptions = { resolver: yupResolver(formSchema) }
-  const { register, handleSubmit, reset, formState } = useForm(formOptions)
-  const { errors } = formState
-  function onSubmit(data) {
-    console.log(JSON.stringify(data, null, 4))
-    return false
-  }
   return (
-    <div >
-      <form onSubmit={handleSubmit(onSubmit)} className="row w-25 gy-3 bg-light p-3 mx-auto mt-5 rounded  novalidate">
-          <div className="form-group col-12 mb-3 mt-3">
-              <h4>Login</h4>
-           </div>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
 
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
 
-        <div className="form-group col-12">
-          <label>Email</label>
-          <input
-            name="email"
-            type="text"
-            {...register('email')}
-            className={`form-control ${errors.email ? 'is-invalid' : ''}`}
-            placeholder="Enter email"
-          />
-          <div className="invalid-feedback">{errors.email?.message}</div>
-        </div>
+            <li>
+              <Link to="/signup">Signup</Link>
+            </li>
+          </ul>
+        </nav>
 
-
-        <div className="form-group col-12">
-          <label>Password</label>
-          <input
-            name="password"
-            type="password"
-            {...register('password')}
-            className={`form-control ${errors.password ? 'is-invalid' : ''}`}
-            placeholder="Enter password"
-          />
-          <div className="invalid-feedback">{errors.password?.message}</div>
-        </div>
-        <div className="col-12">
-          <button type="submit" className="btn btn-primary btn-block">
-            Submit
-          </button>
-        </div>
-      </form>
+        <Routes>
+          <Route path="/signup" element={<Signup />}/>
+          <Route path="/login" element={<Login />}/>
+          <Route path="/" element={<Home />}/>
+        </Routes>
       </div>
-  )
+    </Router>
+  );
+}
+
+// function Home() {
+//   return <h2>Home</h2>;
+// }
+
+function About() {
+  return <h2>About</h2>;
+}
+
+function Users() {
+  return <h2>Users</h2>;
 }
