@@ -1,5 +1,7 @@
 import React,{ Component} from "react";
+import { Link, Route, Router, Routes } from "react-router-dom";
 import logo from './images/ninja.png'
+import UpdateProfile from './updateprofile';
 
 class Profile extends Component{
     render(){
@@ -29,9 +31,17 @@ class Profile extends Component{
                             </div>
                             <div className="row mb-3">
                                 <div className="col-sm-12 text-center">
-                                    <button type="submit" className="btn btn-light btn-inline">
-                                        Edit Profile   
-                                    </button>
+                                    {/* <Router>
+                                        <button type="submit" className="btn btn-light btn-inline">
+                                            <Link to='/updateprofile'>Edit Profile</Link>   
+                                        </button>
+                                        <Routes>
+                                            <Route path='/updateprofile' element={<UpdateProfile/>}/>
+                                        </Routes>
+                                    </Router> */}
+                                        <button type="submit" className="btn btn-light btn-inline">
+                                            Edit Profile   
+                                        </button>
                                 </div>
                             </div>
                         </div>
