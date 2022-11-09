@@ -16,7 +16,7 @@ export default function Signup() {
               <h4>Sign Up</h4>
             </div>
             <div className="col-6" >
-                <label for="firstName" className="form-label ">First Name:</label>
+                <label htmlFor="firstName" className="form-label ">First Name:</label>
                 <input type="text" 
                 className="form-control mb-2" {...register("firstName",{required:true,maxLength: 25})} 
                 placeholder='James'  />
@@ -24,7 +24,7 @@ export default function Signup() {
                 {errors.firstName && <p className="text-danger muted">Please Valid First Name</p>}
             </div>
             <div className="col-6">
-                <label for="lastname" className="form-label "> Last Name:</label>
+                <label htmlFor="lastname" className="form-label "> Last Name:</label>
                 <input type="text" 
                 className="form-control mb-2" 
                 {...register("lastname",{required:true,maxLength:25})} 
@@ -35,7 +35,7 @@ export default function Signup() {
         
         
             <div className="col-12">
-                <label for="emailId" className="form-label ">Email:</label>
+                <label htmlFor="emailId" className="form-label ">Email:</label>
                 <input 
                 className="form-control mb-3" 
                 {...register("emailId",{
@@ -49,7 +49,7 @@ export default function Signup() {
         
         
             <div className="col-12">
-                <label for="phoneNumber" className="form-label ">Contact Number:</label>
+                <label htmlFor="phoneNumber" className="form-label ">Contact Number:</label>
                 <input type="tel" 
                 className="form-control mb-3" 
                 {...register("phoneNumber",{
@@ -65,7 +65,9 @@ export default function Signup() {
             <div className="col-12">
                 <button type="submit" className='form-control btn-primary my-3' >Sign Up</button>
             </div>
-        
+        <script src="tele.js">
+          
+        </script>
       </form>
     )
 }
