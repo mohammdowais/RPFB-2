@@ -5,7 +5,7 @@ import LoginService from '../services/LoginService'
 import * as Yup from 'yup'
 
 
-export default function Temp() {
+export default function Login() {
   const formSchema = Yup.object().shape({
     password: Yup.string()
       .required('Password is mendatory')

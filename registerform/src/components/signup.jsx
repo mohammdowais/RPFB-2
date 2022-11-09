@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 
-export default function Login() {
+export default function Signup() {
 
     const {register, handleSubmit, formState:{errors} } = useForm();
     const onSubmit = (data)=>{
