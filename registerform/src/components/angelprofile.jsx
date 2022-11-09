@@ -6,7 +6,7 @@ import getAngelService from '../services/angelProfileService'
 
 export default function Profile(){
     const angel = getAngelService.getAngel();
-     console.log("loaded",angel.name);
+     console.log("loaded",angel.firstName);
     return(
            <div className="container mt-5" >
                <div className="row g-2">
@@ -17,22 +17,31 @@ export default function Profile(){
                        <div className="col-12">
                            <div className="row mb-3">
                                <div className="col-sm-12 text-center">
-                                   <h4 className="mt-2">Sherlock Holmes</h4>
+                                   <h4 className="mt-2">
+                                    {/* Sherlock Holmes */}
+                                    {angel.firstName + " " +angel.lastName} 
+                                    </h4>
                                </div>
                            </div>
                            <div className="row mb-3">
                                <div className="col-sm-12 text-center">
-                                   <h5 className="mt-2">Detective</h5>
+                                   <h5 className="mt-2">
+                                    {angel.profession}
+                                    </h5>
                                </div>
                            </div>
                            <div className="row mb-3">
                                <div className="col-sm-12 text-center">
-                                   <h6 className="m-0">Invidual/organistion</h6>
+                                   <h6 className="m-0">
+                                    {angel.type}
+                                   </h6>
                                </div>
                            </div>
                            <div className="row mb-3">
                                <div className="col-sm-12 text-center">
-                                   <h6 className="m-0">221B Baker Street, London</h6>
+                                   <h6 className="m-0">
+                                    {angel.address}
+                                   </h6>
                                </div>
                            </div>
                            <div className="row mb-3">
@@ -62,7 +71,8 @@ export default function Profile(){
                                            <h6 className="mb-0">Full Name</h6>
                                        </div>
                                        <div className="col-sm-8 text-secondary">
-                                         Sherlock Holmes
+                                         {/* Sherlock Holmes */}
+                                         {angel.firstName + " " +angel.lastName}
                                        </div>
                                    </div>
                                    <div className="row mb-3">
@@ -70,7 +80,7 @@ export default function Profile(){
                                            <h6 className="mb-0">Email</h6>
                                        </div>
                                        <div className="col-sm-8 text-secondary">
-                                         sherlockholmes@wire.uk
+                                         {angel.email}
                                        </div>
                                    </div>
                                    <div className="row mb-3">
@@ -78,7 +88,7 @@ export default function Profile(){
                                            <h6 className="mb-0">Phone</h6>
                                        </div>
                                        <div className="col-sm-8 text-secondary">
-                                         +44  7946 0999
+                                         {angel.phone}
                                        </div>
                                    </div>
                                    <div className="row mb-3">
@@ -86,7 +96,7 @@ export default function Profile(){
                                            <h6 className="mb-0">Address</h6>
                                        </div>
                                        <div className="col-sm-8 text-secondary">
-                                         221B Baker Street, London
+                                         {angel.address}
                                        </div>
                                    </div>
                                    <div className="row mb-3">
@@ -94,7 +104,7 @@ export default function Profile(){
                                            <h6 className="mb-0">Pin Code</h6>
                                        </div>
                                        <div className="col-sm-8 text-secondary">
-                                           NW1
+                                           {angel.pin}
                                        </div>
                                    </div>
                                    <hr/>
@@ -104,7 +114,7 @@ export default function Profile(){
                                            <h6 className="mb-0">User ID</h6>
                                        </div>
                                        <div className="col-sm-8 text-secondary">
-                                         420I
+                                         {angel.userID}
                                        </div>
                                    </div>
                                    <div className="row mb-3">
@@ -112,7 +122,7 @@ export default function Profile(){
                                            <h6 className="mb-0">Contact Person</h6>
                                        </div>
                                        <div className="col-sm-8 text-secondary">
-                                         Dr. Watson
+                                         {angel.contactPerson}
                                        </div>
                                    </div>
                                    <div className="row mb-3">
@@ -120,7 +130,7 @@ export default function Profile(){
                                            <h6 className="mb-0">Qualification/GST Number</h6>
                                        </div>
                                        <div className="col-sm-8 text-secondary">
-                                         Chemical Engineering/22AAAAA0000A1Z5
+                                        {angel.qualification}
                                        </div>
                                    </div>
                                    <div className="row mb-3">
@@ -128,7 +138,7 @@ export default function Profile(){
                                            <h6 className="mb-0">Interest</h6>
                                        </div>
                                        <div className="col-sm-8 text-secondary">
-                                         Criminal Cases
+                                        {angel.interest}
                                        </div>
                                    </div>
                                    <div className="row mb-3">
@@ -136,7 +146,7 @@ export default function Profile(){
                                            <h6 className="mb-0">Joined</h6>
                                        </div>
                                        <div className="col-sm-8 text-secondary">
-                                           4 Nov 2022
+                                        {angel.joined}
                                        </div>
                                    </div>
                            </div>
