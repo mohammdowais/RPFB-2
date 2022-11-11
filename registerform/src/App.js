@@ -26,7 +26,8 @@ function App() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul 
+          <ul
+          style={{marginLeft:"auto"}}
           className="navbar-nav  mb-2 mb-lg-0 ml-0">
             <li className="nav-item ">
               <Link to="/" className="nav-link " aria-current="page">Home</Link>
