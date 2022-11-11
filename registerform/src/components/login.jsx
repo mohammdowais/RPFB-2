@@ -4,7 +4,12 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import LoginService from '../services/LoginService'
 import * as Yup from 'yup'
 
-
+const styles = {
+  responsive: {
+    maxWidth:"350px",
+    width:"100%"
+  }
+}
 export default function Login() {
   const formSchema = Yup.object().shape({
     password: Yup.string()
@@ -48,7 +53,10 @@ export default function Login() {
   }
   return (
     <div >
-      <form onSubmit={handleSubmit(onSubmit)} className="row w-25 gy-3 bg-light p-3 mx-auto mt-5 rounded  novalidate">
+      <form 
+      style={styles.responsive}
+      onSubmit={handleSubmit(onSubmit)} 
+      className="row  gy-3 bg-light p-3 mx-auto mt-5 rounded  novalidate">
           <div className="form-group col-12 mb-3 mt-3">
               <h4>Login</h4>
            </div>
