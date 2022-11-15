@@ -99,9 +99,9 @@ export default function UpdateProfile() {
                                         </div>
                                         <div className="col-sm-8 text-secondary">
                                             <input
-                                              name="email"
+                                              name="name"
                                               type="text"
-                                              {...register('email')}
+                                              {...register('name')}
                                               className={`form-control ${errors.email ? 'is-invalid' : ''}`}
                                               placeholder="Enter name"
                                             />
@@ -142,11 +142,11 @@ export default function UpdateProfile() {
                                         </div>
                                         <div className="col-sm-8 text-secondary">
                                             <input
-                                              name="email"
+                                              name="address"
                                               type="text"
-                                              {...register('email')}
+                                              {...register('address')}
                                               className={`form-control ${errors.email ? 'is-invalid' : ''}`}
-                                              placeholder="Enter email"
+                                              placeholder="Enter Address"
                                             />
                                         </div>
                                     </div>
@@ -172,11 +172,11 @@ export default function UpdateProfile() {
                                         </div>
                                         <div className="col-sm-8 text-secondary">
                                             <input
-                                              name="email"
+                                              name="name"
                                               type="text"
                                               {...register('email')}
                                               className={`form-control ${errors.email ? 'is-invalid' : ''}`}
-                                              placeholder="Enter email"
+                                              placeholder="Enter Profesion"
                                             />
                                         </div>
                                     </div>
@@ -186,7 +186,7 @@ export default function UpdateProfile() {
                                         </div>
                                         <div className="col-sm-8 text-secondary">
                                         <input
-                                              name="email"
+                                              name="name"
                                               type="text"
                                               {...register('email')}
                                               className={`form-control ${errors.email ? 'is-invalid' : ''}`}
