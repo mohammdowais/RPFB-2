@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from '../src/components/images/Esdlogo.png';
 import './App.css';
 import Header from './components/header';
 import RegistrationForm from './components/registrationForm';
@@ -43,7 +43,6 @@ function App() {
                 <Link to="/angelprofile" className="nav-link" tabIndex="-1" >Profile</Link>
               </li>
             </ul>
-          </div>
         </div>
       </nav>
 
