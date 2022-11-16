@@ -1,12 +1,21 @@
 import React,{ useEffect,Component} from "react";
-import { Link, Route, Router, Routes } from "react-router-dom";
+import { Link, Route, Router, Routes, useNavigate } from "react-router-dom";
 import logo from './images/ninja.png'
 import UpdateProfile from './updateprofile';
+import ChangePass from "./changepassword";
 import getAngelService from '../services/angelProfileService'
 
 export default function Profile(){
     const angel = getAngelService.getAngel();
-     console.log("loaded",angel.firstName);
+    console.log("loaded",angel.firstName);
+    const navigate = useNavigate();
+    const navigateMethod=(event)=>{
+      navigate("/updateprofile");
+    }
+    const changeMethod1=(event)=>{
+        navigate("/changepassword");
+    }
+
     return(
            <div className="container mt-5 mx-auto" >
                <div className="row g-2">
@@ -54,7 +63,9 @@ export default function Profile(){
                                            <Route path='/updateprofile' element={<UpdateProfile/>}/>
                                        </Routes>
                                    </Router> */}
-                                       <button type="submit" className="btn btn-outline-dark btn-inline">
+                                       <button type="submit" className="btn btn-outline-dark btn-inline" 
+                                       onClick={navigateMethod}
+                                       >
                                            Edit Profile   
                                        </button>
                                </div>
@@ -67,7 +78,7 @@ export default function Profile(){
                                            <Route path='/updateprofile' element={<UpdateProfile/>}/>
                                        </Routes>
                                    </Router> */}
-                                       <button type="submit" className="btn btn-outline-dark btn-inline">
+                                       <button type="submit" className="btn btn-outline-dark btn-inline" onClick={changeMethod1}>
                                            Change Password 
                                        </button>
                                </div>

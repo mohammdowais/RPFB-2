@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 const styles = {
   responsive: {
     maxWidth:"350px",
@@ -10,7 +11,10 @@ export default function Signup() {
     const onSubmit = (data)=>{
       console.log(data);
     }
-    
+  const navigate = useNavigate();
+  const navigateMethod=(event)=>{
+    navigate("/login");
+  }
 
     return (
       
@@ -69,7 +73,7 @@ export default function Signup() {
         
         
             <div className="col-12">
-                <button type="submit" className='btn btn-primary btn-block my-1 form-control ' >Sign Up</button>
+                <button type="submit" className='btn btn-primary btn-block my-1 form-control ' onClick={navigateMethod}>Sign Up</button>
             </div>
         <script src="tele.js">
           

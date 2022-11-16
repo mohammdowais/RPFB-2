@@ -27,6 +27,7 @@
 // export default ChangePass;
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 
@@ -53,6 +54,11 @@ export default function ChangePass() {
       .required('Password is mendatory')
       .oneOf([Yup.ref('password')], 'Passwords does not match'),
   })
+  const navigate = useNavigate();
+  const navigateMethod=(event)=>{
+    navigate("/login");
+  }
+
   const formOptions = { resolver: yupResolver(formSchema) }
   const { register, handleSubmit, reset, formState } = useForm(formOptions)
   const { errors } = formState
@@ -89,7 +95,7 @@ export default function ChangePass() {
           <div className="invalid-feedback">{errors.confirmPwd?.message}</div>
         </div>
         <div className="col-12">
-          <button type="submit" className="btn btn-primary btn-block">
+          <button type="submit" className="btn btn-primary btn-block" onClick={navigateMethod}>
             Submit
           </button>
         </div>

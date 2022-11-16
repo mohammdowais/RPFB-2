@@ -39,9 +39,9 @@ function App() {
               <li className="nav-item">
                 <Link to="/login" className="nav-link" tabIndex="-1" >Login</Link>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link to="/angelprofile" className="nav-link" tabIndex="-1" >Profile</Link>
-              </li>
+              </li> */}
             </ul>
             </div>
         </div>
@@ -54,9 +54,12 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />} />
+        <Route path="/changepassword" element={<ChangePass />} />
+        <Route path="/updateprofile" element={<UpdateProfile />} />
       </Routes>
     </Router>
     {/* <UpdateProfile/> */}
+    {/*<ChangePass/> */}
     </div>
   )
 
@@ -71,7 +74,7 @@ function App() {
   //     {/* <Temp/> */}
   //     <Signup/>
   //     {/* <Login/> */}
-  //     {/* <ChangePass/> */}
+      // {<ChangePass/> }
   //     {/* <Profile/> */}
   // {/* <UpdateProfile/> */ }
   //   </div>

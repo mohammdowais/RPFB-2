@@ -1,5 +1,6 @@
 import React,{ Component} from "react";
-import { useForm } from 'react-hook-form'
+import { useForm} from 'react-hook-form'
+import { useNavigate } from "react-router-dom";
 import logo from './images/ninja.png'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
@@ -36,6 +37,11 @@ export default function UpdateProfile() {
         )
       //   .oneOf([Yup.ref('password')], 'Passwords does not match'),
     })
+    const navigate = useNavigate();
+    const navigateMethod=(event)=>{
+      navigate("/angelprofile");
+    }
+
     const formOptions = { resolver: yupResolver(formSchema) }
     const { register, handleSubmit, reset, formState } = useForm(formOptions)
     const { errors } = formState
@@ -224,7 +230,7 @@ export default function UpdateProfile() {
                                     </div>
                                     <div className="row mb-3 p-0">
                                         <div className="col-lg-2 mx-auto mt-1">
-                                            <button type="submit" className="btn w-100 btn-primary btn-block">
+                                            <button type="submit" className="btn w-100 btn-primary btn-block" onClick={navigateMethod}>
                                                 Update
                                             </button>
                                         </div>

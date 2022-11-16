@@ -59,6 +59,10 @@ export default function Login() {
     // const [email,setEmail] = useState('');  
     // const [password,setPassword] =useState('');
     const [respX,setRespX] =useState('');
+    const navigate = useNavigate();
+    const navigateMethod=(event)=>{
+      navigate("/angelprofile");
+    }
    
   
   
@@ -81,6 +85,7 @@ export default function Login() {
             setRespX(res.data);
           })
           console.log( " out result "+respX);
+          // navigate("/angelprofile");
       }
   return (
     <div >
@@ -119,7 +124,9 @@ export default function Login() {
           <div className="invalid-feedback">{errors.password?.message}</div>
         </div>
         <div className="col-12">
-          <button type="submit" className="btn btn-primary btn-block">
+          <button type="submit" className="btn btn-primary btn-block" 
+          onClick={navigateMethod}
+          >
             Login
           </button>
         </div>
