@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form'
+import {useNavigate} from 'react-router-dom'
 import { yupResolver } from '@hookform/resolvers/yup'
 import LoginService from '../services/LoginService'
 import * as Yup from 'yup'
+import axios from 'axios';
+
+const LOGIN_POST_URL ='http://localhost:8080/api/loginhelper/login' 
 
 const styles = {
   responsive: {
@@ -45,12 +49,46 @@ export default function Login() {
   const formOptions = { resolver: yupResolver(formSchema) }
   const { register, handleSubmit, reset, formState } = useForm(formOptions)
   const { errors } = formState
-  function onSubmit(data) {
-    // console.log(JSON.stringify(data, null, 4))
-    console.log(data)
-    LoginService.postRequestData(data);
-    return false
-  }
+  // function onSubmit(data) {
+  //   // console.log(JSON.stringify(data, null, 4))
+  //   console.log(data)
+  //   LoginService.postRequestData(data);
+  //   return false
+  // }
+  const navigate = useNavigate();
+
+    const [email,setEmail] = useState('');  
+    const [password,setPassword] =useState('');
+    const [respX,setRespX] =useState('');
+   
+  const   changeEmail=(event)=> {
+    setEmail( event.target.value);
+      }
+
+  const  changePassword=(event)=> {
+    setPassword(event.target.value);
+    }
+  
+  const onSubmit= ()=> {
+        let angel = {
+            email:email,
+            password:password
+        }
+        console.log(angel);
+       
+     axios({
+            method: 'post',
+            url: LOGIN_POST_URL,
+            data: {
+                    email: angel.email,
+                    password: angel.password
+                    }
+        }).then(res =>{
+            console.log(" in "+res.data);
+            setRespX(res.data);
+          })
+          console.log( " out result "+respX);
+      }
   return (
     <div >
       <form 
