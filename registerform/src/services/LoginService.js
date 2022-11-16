@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const ANGEL_POST_URL ="http://localhost:8081/api/loginhelper/save"
+const ANGEL_POST_URL ="http://localhost:8080/api/loginhelper/login"
 
 
 class LoginService{
@@ -13,15 +13,9 @@ class LoginService{
                 email:angel.email,
                 pasword:angel.password
             }
-
-            axios.post(url, {
-      email: angel.email,
-      password: angel.password
+                 
     })
-    .then((response) => {
-      console.log(response);
-    });
-        
-    }
+  }
 }
+  
 export default new LoginService()
