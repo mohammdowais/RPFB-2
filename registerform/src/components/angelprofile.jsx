@@ -8,9 +8,9 @@ export default function Profile(){
     const angel = getAngelService.getAngel();
      console.log("loaded",angel.firstName);
     return(
-           <div className="container mt-5" >
+           <div className="container mt-5 mx-auto" >
                <div className="row g-2">
-                   <div className="profile p3 col-4 bg-light rounded text-center">
+                   <div className="profile p3 col-lg-4 col-md-4  col-xs-12 bg-light rounded text-center">
                        <div className="col-12 mt-5">
                            <img src={logo} alt="logo" className="img-fluid rounded-circle w-50"/>
                        </div>
@@ -23,14 +23,14 @@ export default function Profile(){
                                     </h4>
                                </div>
                            </div>
-                           <div className="row mb-3">
+                           <div className="row mb-1">
                                <div className="col-sm-12 text-center">
-                                   <h5 className="mt-2">
+                                   <h5 className="mt-1">
                                     {angel.profession}
                                     </h5>
                                </div>
                            </div>
-                           <div className="row mb-3">
+                           <div className="row mb-1">
                                <div className="col-sm-12 text-center">
                                    <h6 className="m-0">
                                     {angel.type}
@@ -45,7 +45,7 @@ export default function Profile(){
                                </div>
                            </div>
                            <div className="row mb-3">
-                               <div className="col-sm-12 text-center">
+                               <div className="col-sm-12 mb-2">
                                    {/* <Router>
                                        <button type="submit" className="btn btn-light btn-inline">
                                            <Link to='/updateprofile'>Edit Profile</Link>   
@@ -54,14 +54,27 @@ export default function Profile(){
                                            <Route path='/updateprofile' element={<UpdateProfile/>}/>
                                        </Routes>
                                    </Router> */}
-                                       <button type="submit" className="btn btn-light btn-inline">
+                                       <button type="submit" className="btn btn-outline-dark btn-inline">
                                            Edit Profile   
+                                       </button>
+                               </div>
+                               <div className="col-sm-12  mt-2">
+                                   {/* <Router>
+                                       <button type="submit" className="btn btn-light btn-inline">
+                                           <Link to='/updateprofile'>Edit Profile</Link>   
+                                       </button>
+                                       <Routes>
+                                           <Route path='/updateprofile' element={<UpdateProfile/>}/>
+                                       </Routes>
+                                   </Router> */}
+                                       <button type="submit" className="btn btn-outline-dark btn-inline">
+                                           Change Password 
                                        </button>
                                </div>
                            </div>
                        </div>
                    </div>
-                   <div className="info p3 col-8 bg-light rounded">
+                   <div className="info p3 col-lg-8 col-md-4 col-xs-12 bg-light rounded">
                        <div className="row g-2 mt-3">
                            
                            <div className="p-3 col-12 ">
