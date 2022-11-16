@@ -47,7 +47,7 @@ export default function UpdateProfile() {
             <div className="container mt-5">
                 <div className="row g-2">
 
-                    <div className="profile p3 col-4 bg-light rounded text-center">
+                    <div className="profile p3 col-lg-4 col-md-4  col-xs-12 bg-light rounded text-center">
                         <div className="col-12 mt-5 ">
                             <img src={logo} alt="logo" className="img-fluid rounded-circle w-50"/>
                             {/* <input
@@ -88,7 +88,7 @@ export default function UpdateProfile() {
                         </div>
                     </div>
 
-                    <div className="info p3 col-8 bg-light rounded">
+                    <div className="info p3 col-lg-8 col-md-4  col-xs-12 bg-light rounded">
                         <div className="row g-2 mt-3">
                             
                             <div className="p-3 col-12 ">
@@ -99,9 +99,9 @@ export default function UpdateProfile() {
                                         </div>
                                         <div className="col-sm-8 text-secondary">
                                             <input
-                                              name="email"
+                                              name="name"
                                               type="text"
-                                              {...register('email')}
+                                              {...register('name')}
                                               className={`form-control ${errors.email ? 'is-invalid' : ''}`}
                                               placeholder="Enter name"
                                             />
@@ -142,11 +142,11 @@ export default function UpdateProfile() {
                                         </div>
                                         <div className="col-sm-8 text-secondary">
                                             <input
-                                              name="email"
+                                              name="address"
                                               type="text"
-                                              {...register('email')}
+                                              {...register('address')}
                                               className={`form-control ${errors.email ? 'is-invalid' : ''}`}
-                                              placeholder="Enter email"
+                                              placeholder="Enter Address"
                                             />
                                         </div>
                                     </div>
@@ -172,11 +172,11 @@ export default function UpdateProfile() {
                                         </div>
                                         <div className="col-sm-8 text-secondary">
                                             <input
-                                              name="email"
+                                              name="name"
                                               type="text"
                                               {...register('email')}
                                               className={`form-control ${errors.email ? 'is-invalid' : ''}`}
-                                              placeholder="Enter email"
+                                              placeholder="Enter Profesion"
                                             />
                                         </div>
                                     </div>
@@ -186,7 +186,7 @@ export default function UpdateProfile() {
                                         </div>
                                         <div className="col-sm-8 text-secondary">
                                         <input
-                                              name="email"
+                                              name="name"
                                               type="text"
                                               {...register('email')}
                                               className={`form-control ${errors.email ? 'is-invalid' : ''}`}
@@ -222,9 +222,9 @@ export default function UpdateProfile() {
                                             />
                                         </div>
                                     </div>
-                                    <div className="row mb-3">
-                                        <div className="col-sm-4 mx-auto mt-1">
-                                            <button type="submit" className="btn btn-primary btn-block">
+                                    <div className="row mb-3 p-0">
+                                        <div className="col-lg-2 mx-auto mt-1">
+                                            <button type="submit" className="btn w-100 btn-primary btn-block">
                                                 Update
                                             </button>
                                         </div>
