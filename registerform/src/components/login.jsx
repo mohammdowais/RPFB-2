@@ -7,7 +7,7 @@ import * as Yup from 'yup'
 import axios from 'axios';
 
 const LOGIN_POST_URL ='http://localhost:8080/api/loginhelper/login' 
-
+let isLoggedin = false;
 const styles = {
   responsive: {
     maxWidth:"350px",
@@ -58,6 +58,7 @@ export default function Login() {
 
     // const [email,setEmail] = useState('');  
     // const [password,setPassword] =useState('');
+    
     const [respX,setRespX] =useState('');
     const navigate = useNavigate();
     // const navigateMethod=(event)=>{
@@ -71,7 +72,7 @@ export default function Login() {
         //     email:email,
         //     password:password
         // }
-        console.log(angel);
+        // console.log(angel);
        
      axios({
             method: 'post',
@@ -82,55 +83,74 @@ export default function Login() {
                     }
         }).then(res =>{
             console.log(" in "+res.data);
+            if(res.data == "Login SuccessFull"){
+              navigate("/angelprofile");
+            }
+            else{
+              console.log(isLoggedin+"login is this")
+              isLoggedin =true;
+              console.log(isLoggedin+"login is this")
+            }
             setRespX(res.data);
           })
           console.log( " out result "+respX);
-          navigate("/angelprofile");
+          console.log("respx out"+respX)
+          
+          // navigate("/angelprofile");
+          
       }
   return (
     <div >
-      <form 
-      style={styles.responsive}
-      onSubmit={handleSubmit(onSubmit)} 
-      className="row  gy-3 bg-light p-3 mx-auto mt-5 rounded  novalidate">
+        
+        {isLoggedin && (
+            <div className="col-4 mx-auto  mt-3 mb-0 alert alert-danger">
+          Invalid Email/Password<br/>
+          {/* If you are New User Register instead */}
+        </div>)
+          }
 
-          <div className="form-group col-12 mb-3 mt-3">
-              <h4>Login</h4>
-           </div>
+        <form 
+        style={styles.responsive}
+        onSubmit={handleSubmit(onSubmit)} 
+        className="row gy-3 bg-light p-3 mx-auto mt-4 rounded  novalidate">
 
-
-        <div className="form-group col-12">
-          <label>Email</label>
-          <input
-            name="email"
-            type="text"
-            {...register('email')}
-            className={`form-control ${errors.email ? 'is-invalid' : ''}`}
-            placeholder="Enter email"
-          />
-          <div className="invalid-feedback">{errors.email?.message}</div>
-        </div>
+            <div className="form-group col-12 mb-3 mt-4">
+                <h4>Login</h4>
+            </div>
 
 
-        <div className="form-group col-12">
-          <label>Password</label>
-          <input
-            name="password"
-            type="password"
-            {...register('password')}
-            className={`form-control ${errors.password ? 'is-invalid' : ''}`}
-            placeholder="Enter password"
-          />
-          <div className="invalid-feedback">{errors.password?.message}</div>
-        </div>
-        <div className="col-12">
-          <button type="submit" className="btn btn-primary btn-block" 
-          // onClick={navigateMethod}
-          >
-            Login
-          </button>
-        </div>
-      </form>
+          <div className="form-group col-12">
+            <label>Email</label>
+            <input
+              name="email"
+              type="text"
+              {...register('email')}
+              className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+              placeholder="Enter email"
+            />
+            <div className="invalid-feedback">{errors.email?.message}</div>
+          </div>
+
+
+          <div className="form-group col-12">
+            <label>Password</label>
+            <input
+              name="password"
+              type="password"
+              {...register('password')}
+              className={`form-control ${errors.password ? 'is-invalid' : ''}`}
+              placeholder="Enter password"
+            />
+            <div className="invalid-feedback">{errors.password?.message}</div>
+          </div>
+          <div className="col-12">
+            <button type="submit" className="btn btn-primary btn-block" 
+            // onClick={navigateMethod}
+            >
+              Login
+            </button>
+          </div>
+        </form>
       </div>
   )
 }
