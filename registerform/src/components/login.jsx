@@ -60,9 +60,9 @@ export default function Login() {
     // const [password,setPassword] =useState('');
     const [respX,setRespX] =useState('');
     const navigate = useNavigate();
-    const navigateMethod=(event)=>{
-      navigate("/angelprofile");
-    }
+    // const navigateMethod=(event)=>{
+    //   navigate("/angelprofile");
+    // }
    
   
   
@@ -85,7 +85,7 @@ export default function Login() {
             setRespX(res.data);
           })
           console.log( " out result "+respX);
-          // navigate("/angelprofile");
+          navigate("/angelprofile");
       }
   return (
     <div >
@@ -125,7 +125,7 @@ export default function Login() {
         </div>
         <div className="col-12">
           <button type="submit" className="btn btn-primary btn-block" 
-          onClick={navigateMethod}
+          // onClick={navigateMethod}
           >
             Login
           </button>
