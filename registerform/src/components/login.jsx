@@ -55,25 +55,18 @@ export default function Login() {
   //   LoginService.postRequestData(data);
   //   return false
   // }
-  const navigate = useNavigate();
 
-    const [email,setEmail] = useState('');  
-    const [password,setPassword] =useState('');
+    // const [email,setEmail] = useState('');  
+    // const [password,setPassword] =useState('');
     const [respX,setRespX] =useState('');
    
-  const   changeEmail=(event)=> {
-    setEmail( event.target.value);
-      }
-
-  const  changePassword=(event)=> {
-    setPassword(event.target.value);
-    }
   
-  const onSubmit= ()=> {
-        let angel = {
-            email:email,
-            password:password
-        }
+  
+  const onSubmit= (angel)=> {
+        // let angel = {
+        //     email:email,
+        //     password:password
+        // }
         console.log(angel);
        
      axios({
