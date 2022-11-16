@@ -55,7 +55,7 @@ function App() {
         <Route path="/" element={<Home />} />
       </Routes>
     </Router>
-    <UpdateProfile/>
+    {/* <UpdateProfile/> */}
     </div>
   )
 
