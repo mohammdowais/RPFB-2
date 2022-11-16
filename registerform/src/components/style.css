@@ -1,16 +1,15 @@
 body{
-    background: #bdc3c7;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #bdc3c7;  
+    background: -webkit-linear-gradient(to right, #969696, #bdc3c7);  
+    background: linear-gradient(to right, #969696, #bdc3c7); 
 }
-
+/*
 .form{
     background-color: white;
     border-radius: 5px;
     width: 550px;
     margin: 20px auto;
     padding: 20px;
-    /* height: 600px; */
 }
 
 .form-body{
@@ -34,7 +33,7 @@ body{
     text-align: center;
 }
 
-/* .btn{
+.btn{
     width: 20;
     height: 5;
     background-color: blue;
