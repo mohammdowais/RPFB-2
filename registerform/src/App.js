@@ -53,7 +53,7 @@ function App() {
         <Route path="/angelprofile" element={<Profile />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<Home />} />
+        <Route exact path="/" element={<Home />} />
         <Route path="/changepassword" element={<ChangePass />} />
         <Route path="/updateprofile" element={<UpdateProfile />} />
       </Routes>
