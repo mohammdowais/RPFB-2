@@ -1,5 +1,7 @@
+import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 const styles = {
   responsive: {
     maxWidth:"350px",
@@ -8,12 +10,35 @@ const styles = {
 export default function Signup() {
 
     const {register, handleSubmit, formState:{errors} } = useForm();
+    const [respX,setRespX] =useState('');
+    const LOGIN_POST_URL ="http://localhost:8080/api/signup"
     const onSubmit = (data)=>{
       console.log(data);
+      console.log(data.phoneNumber)
+      axios({
+        method: 'post',
+        url: LOGIN_POST_URL,
+        data: {
+                email: data.emailId,
+                firstName: data.firstName,
+                lastName:data.lastname,
+                contact_no:data.phoneNumber,
+                // password:"h1K@"
+                }
+    }).then(res =>{
+        console.log(" in "+res.data);
+        if(res.data === "Signup Successfull"){
+          navigate("/login");
+        }
+        else{
+          console.log("Looks Like you are already a user please signup again")
+        }
+        setRespX(res.data);
+      })
     }
   const navigate = useNavigate();
   const navigateMethod=(event)=>{
-    navigate("/login");
+    // navigate("/login");
   }
 
     return (
@@ -64,7 +89,7 @@ export default function Signup() {
                 className="form-control mb-3" 
                 {...register("phoneNumber",{
                 required:true,
-                pattern:/[0-9]{10}/,
+                pattern:/^[0-9]{10}$/,
                 })} 
                 placeholder='Contact number' 
                 />

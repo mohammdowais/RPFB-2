@@ -7,6 +7,8 @@ import getAngelService from '../services/angelProfileService'
 
 export default function Profile(){
     const angel = getAngelService.getAngel();
+    const testdata = getAngelService.getData();
+    console.log("testdata"+testdata)
     console.log("loaded",angel.firstName);
     const navigate = useNavigate();
     const navigateMethod=(event)=>{
