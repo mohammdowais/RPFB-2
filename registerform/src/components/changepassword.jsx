@@ -5,7 +5,11 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import axios from 'axios'
 import * as Yup from 'yup'
 
-
+const styles = {
+  responsive: {
+    maxWidth:"350px",
+  }
+}
 export default function ChangePass() {
   const formSchema = Yup.object().shape({
     password: Yup.string()
@@ -63,7 +67,10 @@ export default function ChangePass() {
   }
   return (
     <div >
-      <form onSubmit={handleSubmit(onSubmit)} className="row gy-3 bg-light p-3 mx-auto mt-4 rounded  novalidate">
+      <form 
+      style={styles.responsive}
+      onSubmit={handleSubmit(onSubmit)} 
+      className="row gy-3 bg-light p-3 mx-auto mt-5 rounded">
         <div className="form-group col-12 mb-3 mt-3">
               <h4>Change Password</h4>
            </div>
