@@ -22,5 +22,10 @@ class getAngelService{
         };
         return (angel);
     }
+    getData(){
+      const res = axios.get(`http://localhost:8080/api/angelUser/getAllAngelUser`);
+      console.log(res);
+      return res;
+    }
 }
 export default new getAngelService()
