@@ -1,15 +1,49 @@
-import React,{ useEffect,Component} from "react";
+import React,{ useEffect, useState,Component} from "react";
 import { Link, Route, Router, Routes, useNavigate } from "react-router-dom";
 import logo from './images/ninja.png'
 import UpdateProfile from './updateprofile';
 import ChangePass from "./changepassword";
-import getAngelService from '../services/angelProfileService'
+// import App from '../services/angelProfileService'
+import { AxiosHeaders } from "axios";
 
 export default function Profile(){
-    const angel = getAngelService.getAngel();
-    const testdata = getAngelService.getData();
-    console.log("testdata"+testdata)
-    console.log("loaded",angel.firstName);
+    const App =()=>{
+        const [posts, setPosts] = useState([]);
+            // const angel ={
+            //     firstName: 'Sherlock',
+            //     lastName: 'holmes',
+            //     profession:'Detective',
+            //     address: '221B Baker Street, London, UK',
+            //     Type:"Individual",
+            //     email:"sherlockholmes@wire.uk",
+            //     phone:"+44  7946 0999",
+            //     pin:"NW1",
+            //     contactPerson:'Dr. Watson',
+            //     qualification:'Chemical Engineering',
+            //     interest:'Criminal Cases',
+            //     joined:'4 Nov 2022',
+            //     userID: '123'
+            //   };
+            
+            useEffect(() => {
+              fetch('http://localhost:8080/api/angelUser/getAngelUserById/3')
+                 .then((res) => res.json())
+                 .then((data) => {
+                    console.log(data);
+                    setPosts(data);
+                 })
+                 .catch((err) => {
+                    console.log(err.message);
+                 });
+           }, []);
+        
+           return (
+              posts
+           );
+        };
+    const angel = App();
+    console.log("testdata"+angel)
+    // console.log("loaded",angel.firstName);
     const navigate = useNavigate();
     const navigateMethod=(event)=>{
       navigate("/updateprofile");
@@ -30,28 +64,29 @@ export default function Profile(){
                                <div className="col-sm-12 text-center">
                                    <h4 className="mt-2">
                                     {/* Sherlock Holmes */}
-                                    {angel.firstName + " " +angel.lastName} 
+                                    {/* {angel.firstName + " " +angel.lastName}  */}
+                                    {angel.ahName}
                                     </h4>
                                </div>
                            </div>
                            <div className="row mb-1">
                                <div className="col-sm-12 text-center">
                                    <h5 className="mt-1">
-                                    {angel.profession}
+                                    {angel.ahProfession}
                                     </h5>
                                </div>
                            </div>
                            <div className="row mb-1">
                                <div className="col-sm-12 text-center">
                                    <h6 className="m-0">
-                                    {angel.type}
+                                    {angel.ahType}
                                    </h6>
                                </div>
                            </div>
                            <div className="row mb-3">
                                <div className="col-sm-12 text-center">
                                    <h6 className="m-0">
-                                    {angel.address}
+                                    {angel.ahAddress}
                                    </h6>
                                </div>
                            </div>
@@ -98,7 +133,7 @@ export default function Profile(){
                                        </div>
                                        <div className="col-sm-8 text-secondary">
                                          {/* Sherlock Holmes */}
-                                         {angel.firstName + " " +angel.lastName}
+                                         {angel.ahName}
                                        </div>
                                    </div>
                                    <div className="row mb-3">
@@ -106,7 +141,7 @@ export default function Profile(){
                                            <h6 className="mb-0">Email</h6>
                                        </div>
                                        <div className="col-sm-8 text-secondary">
-                                         {angel.email}
+                                         {angel.ahEmail}
                                        </div>
                                    </div>
                                    <div className="row mb-3">
@@ -114,7 +149,7 @@ export default function Profile(){
                                            <h6 className="mb-0">Phone</h6>
                                        </div>
                                        <div className="col-sm-8 text-secondary">
-                                         {angel.phone}
+                                         {angel.ahContactNumber}
                                        </div>
                                    </div>
                                    <div className="row mb-3">
@@ -122,7 +157,7 @@ export default function Profile(){
                                            <h6 className="mb-0">Address</h6>
                                        </div>
                                        <div className="col-sm-8 text-secondary">
-                                         {angel.address}
+                                         {angel.ahAddress}
                                        </div>
                                    </div>
                                    <div className="row mb-3">
@@ -130,7 +165,7 @@ export default function Profile(){
                                            <h6 className="mb-0">Pin Code</h6>
                                        </div>
                                        <div className="col-sm-8 text-secondary">
-                                           {angel.pin}
+                                           {angel.ahPincode}
                                        </div>
                                    </div>
                                    <hr/>
@@ -140,7 +175,7 @@ export default function Profile(){
                                            <h6 className="mb-0">User ID</h6>
                                        </div>
                                        <div className="col-sm-8 text-secondary">
-                                         {angel.userID}
+                                         {angel.ahId}
                                        </div>
                                    </div>
                                    <div className="row mb-3">
@@ -148,7 +183,7 @@ export default function Profile(){
                                            <h6 className="mb-0">Contact Person</h6>
                                        </div>
                                        <div className="col-sm-8 text-secondary">
-                                         {angel.contactPerson}
+                                         {angel.ahContactNumber}
                                        </div>
                                    </div>
                                    <div className="row mb-3">
@@ -156,7 +191,7 @@ export default function Profile(){
                                            <h6 className="mb-0">Qualification/GST Number</h6>
                                        </div>
                                        <div className="col-sm-8 text-secondary">
-                                        {angel.qualification}
+                                        {angel.ahGSTNumber_id}
                                        </div>
                                    </div>
                                    <div className="row mb-3">
@@ -164,7 +199,7 @@ export default function Profile(){
                                            <h6 className="mb-0">Interest</h6>
                                        </div>
                                        <div className="col-sm-8 text-secondary">
-                                        {angel.interest}
+                                        {angel.ahInterestId}
                                        </div>
                                    </div>
                                    <div className="row mb-3">
@@ -172,7 +207,7 @@ export default function Profile(){
                                            <h6 className="mb-0">Joined</h6>
                                        </div>
                                        <div className="col-sm-8 text-secondary">
-                                        {angel.joined}
+                                        {angel.ahCreated_on}
                                        </div>
                                    </div>
                            </div>
