@@ -1,14 +1,9 @@
-import React,{ useEffect, useState,Component} from "react";
-import { Link, Route, Router, Routes, useNavigate } from "react-router-dom";
+import React,{ useEffect, useState} from "react";
+import {useNavigate } from "react-router-dom";
 import logo from './images/ninja.png'
-import UpdateProfile from './updateprofile';
-import ChangePass from "./changepassword";
-// import App from '../services/angelProfileService'
-import { AxiosHeaders } from "axios";
 
 export default function Profile(){
-    const App =()=>{
-        const [posts, setPosts] = useState([]);
+        const [angel, setPosts] = useState([]);
             // const angel ={
             //     firstName: 'Sherlock',
             //     lastName: 'holmes',
@@ -36,14 +31,7 @@ export default function Profile(){
                     console.log(err.message);
                  });
            }, []);
-        
-           return (
-              posts
-           );
-        };
-    const angel = App();
     console.log("testdata"+angel)
-    // console.log("loaded",angel.firstName);
     const navigate = useNavigate();
     const navigateMethod=(event)=>{
       navigate("/updateprofile");
@@ -92,14 +80,6 @@ export default function Profile(){
                            </div>
                            <div className="row mb-3">
                                <div className="col-sm-12 mb-2">
-                                   {/* <Router>
-                                       <button type="submit" className="btn btn-light btn-inline">
-                                           <Link to='/updateprofile'>Edit Profile</Link>   
-                                       </button>
-                                       <Routes>
-                                           <Route path='/updateprofile' element={<UpdateProfile/>}/>
-                                       </Routes>
-                                   </Router> */}
                                        <button type="submit" className="btn btn-outline-dark btn-inline" 
                                        onClick={navigateMethod}
                                        >
@@ -107,14 +87,6 @@ export default function Profile(){
                                        </button>
                                </div>
                                <div className="col-sm-12  mt-2">
-                                   {/* <Router>
-                                       <button type="submit" className="btn btn-light btn-inline">
-                                           <Link to='/updateprofile'>Edit Profile</Link>   
-                                       </button>
-                                       <Routes>
-                                           <Route path='/updateprofile' element={<UpdateProfile/>}/>
-                                       </Routes>
-                                   </Router> */}
                                        <button type="submit" className="btn btn-outline-dark btn-inline" onClick={changeMethod1}>
                                            Change Password 
                                        </button>
