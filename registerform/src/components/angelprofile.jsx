@@ -21,7 +21,7 @@ export default function Profile(){
             //   };
             
             useEffect(() => {
-              fetch('http://localhost:8080/api/angelUser/getAngelUserById/3')
+              fetch('http://localhost:8081/api/angelUser/getAngelUserById/3')
                  .then((res) => res.json())
                  .then((data) => {
                     console.log(data);

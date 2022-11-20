@@ -11,7 +11,7 @@ export default function Signup() {
 
     const {register, handleSubmit, formState:{errors} } = useForm();
     const [respX,setRespX] =useState('');
-    const LOGIN_POST_URL ="http://localhost:8080/api/signup"
+    const LOGIN_POST_URL ="http://localhost:8081/api/signup"
     const onSubmit = (data)=>{
       console.log(data);
       console.log(data.phoneNumber)
