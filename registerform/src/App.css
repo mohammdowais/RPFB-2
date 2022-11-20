@@ -1,8 +1,12 @@
 /* .App {
   text-align: center;
 } */
-
-.App-logo {
+body{
+  background: #bdc3c7;  
+  background: -webkit-linear-gradient(to right, #969696, #bdc3c7);  
+  background: linear-gradient(to right, #969696, #bdc3c7); 
+}
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -26,17 +30,4 @@
 
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
-
-/* profile section */
+} */

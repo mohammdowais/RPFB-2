@@ -44,35 +44,16 @@ export default function Login() {
         /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
         "Please Enter a valid email"
       )
-    //   .oneOf([Yup.ref('password')], 'Passwords does not match'),
   })
   const formOptions = { resolver: yupResolver(formSchema) }
   const { register, handleSubmit, reset, formState } = useForm(formOptions)
   const { errors } = formState
-  // function onSubmit(data) {
-  //   // console.log(JSON.stringify(data, null, 4))
-  //   console.log(data)
-  //   LoginService.postRequestData(data);
-  //   return false
-  // }
-
-    // const [email,setEmail] = useState('');  
-    // const [password,setPassword] =useState('');
     
     const [respX,setRespX] =useState('');
     const navigate = useNavigate();
-    // const navigateMethod=(event)=>{
-    //   navigate("/angelprofile");
-    // }
-   
   
   
   const onSubmit= (angel)=> {
-        // let angel = {
-        //     email:email,
-        //     password:password
-        // }
-        // console.log(angel);
        
      axios({
             method: 'post',
@@ -95,8 +76,6 @@ export default function Login() {
           })
           console.log( " out result "+respX);
           console.log("respx out"+respX)
-          
-          // navigate("/angelprofile");
           
       }
   return (

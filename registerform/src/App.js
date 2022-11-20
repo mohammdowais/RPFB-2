@@ -1,13 +1,12 @@
-import logo from '../src/components/images/Esdlogo.png';
+import logo from './components/images/bluebooklogo.png';
 import './App.css';
-import Header from './components/header';
-import RegistrationForm from './components/registrationForm';
+// import './style.css';
+// import RegistrationForm from './components/registrationForm';
 import Home from "./components/home"
 import Login from './components/login';
 import Signup from './components/signup';
 import Profile from './components/angelprofile';
 import ChangePass from './components/changepassword';
-import Temp from './components/temp'
 import UpdateProfile from './components/updateprofile';
 import {
   BrowserRouter as Router,
@@ -22,7 +21,10 @@ function App() {
     <Router>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">Bluebook</a>
+          <Link className="navbar-brand" href="/">
+          <img src={logo} style={{width:"50px",marginTop:"-10px"}} alt="bluebook"/>  
+            Bluebook
+          </Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -39,13 +41,9 @@ function App() {
               <li className="nav-item">
                 <Link to="/login" className="nav-link" tabIndex="-1" >Login</Link>
               </li>
-              {/* <li className="nav-item">
-                <Link to="/angelprofile" className="nav-link" tabIndex="-1" >Profile</Link>
-              </li> */}
             </ul>
             </div>
         </div>
-      {/* </div> */}
       </nav>
 
 
@@ -53,7 +51,7 @@ function App() {
         <Route path="/angelprofile" element={<Profile />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<Home />} />
+        <Route exact path="/" element={<Home />} />
         <Route path="/changepassword" element={<ChangePass />} />
         <Route path="/updateprofile" element={<UpdateProfile />} />
       </Routes>
