@@ -21,7 +21,7 @@ export default function Profile() {
   //   };
 
   useEffect(() => {
-    fetch("http://localhost:8082/api/angelUser/getAngelUserById/3")
+    fetch("http://localhost:8080/api/angelUser/getAngelUserById/3")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -44,7 +44,7 @@ export default function Profile() {
   return (
     <div className="container mt-5 mx-auto">
       <div className="row g-2">
-        <div className="profile p3 col-lg-4 col-md-4  col-xs-12 bg-light rounded text-center">
+        <div className="profile p3 col-lg-4 col-md-4  col-xs-12 bg-light rounded text-center border border-right-dark">
           <div className="col-12 mt-5">
             <img
               src={logo}
@@ -100,7 +100,7 @@ export default function Profile() {
         <div className="info p3 col-lg-8 col-md-4 col-xs-12 bg-light rounded">
           <div className="row g-2 mt-3">
             <div className="p-3 col-12 ">
-              <div className="row mb-3">
+              <div className="row mb-3 mt-3">
                 <div className="col-sm-4">
                   <h6 className="mb-0">Full Name</h6>
                 </div>
@@ -132,7 +132,7 @@ export default function Profile() {
                 </div>
                 <div className="col-sm-8 text-secondary">{angel.ahPincode}</div>
               </div>
-              <hr />
+              {/* <hr /> */}
 
               {/* Additional information */}
               <div className="row mb-3">
@@ -159,18 +159,18 @@ export default function Profile() {
               </div>
               <div className="row mb-3">
                 <div className="col-sm-4">
-                  <h6 className="mb-0">Interest</h6>
+                  {/* <h6 className="mb-0">Interest</h6> */}
                 </div>
                 <div className="col-sm-8 text-secondary">
-                  {angel.ahInterestId}
+                  {/* {angel.ahInterestId} */}
                 </div>
               </div>
               <div className="row mb-3">
                 <div className="col-sm-4">
-                  <h6 className="mb-0">Joined</h6>
+                  {/* <h6 className="mb-0">Joined</h6> */}
                 </div>
                 <div className="col-sm-8 text-secondary">
-                  {angel.ahCreated_on}
+                  {/* {angel.ahCreated_on} */}
                 </div>
               </div>
             </div>

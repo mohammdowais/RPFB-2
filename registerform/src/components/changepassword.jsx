@@ -31,7 +31,7 @@ export default function ChangePass() {
   const { register, handleSubmit, formState } = useForm(formOptions);
   const { errors } = formState;
   const [setRespX] = useState("");
-  const LOGIN_POST_URL = "http://localhost:8082/api/loginhelper/changepassword";
+  const LOGIN_POST_URL = "http://localhost:8080/api/loginhelper/changepassword";
 
   function onSubmit(angel) {
     console.log(JSON.stringify(angel, null, 4));
