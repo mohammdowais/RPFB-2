@@ -43,7 +43,7 @@ export default function Profile() {
 
   return (
     <div className="container mt-5 mx-auto">
-      <div className="row g-2">
+      <div className="row g-2 mt-5">
         <div className="profile p3 col-lg-4 col-md-4  col-xs-12 bg-light rounded text-center">
           <div className="col-12 mt-5">
             <img

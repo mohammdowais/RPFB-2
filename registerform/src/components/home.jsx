@@ -4,68 +4,29 @@ import logo from "./images/img1.jpg";
 export default function Home() {
   return (
     <div>
-      <div
-        id="carouselExampleIndicators"
-        className="carousel slide"
-        data-bs-ride="carousel"
-      >
-        <div className="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="0"
-            className="active"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
+      {/* <div classNameName="container-fluid text-light">
+        "Not all of us can do great things. But we can do small things with
+        great love."
+      </div> */}
+      <div className="row mt-5">
+        <div className="ms-5 mt-5 ps-3 col-6 my-auto">
+          <figure>
+            <blockquote className="blockquote mb-4">
+              <p>
+                <i className="fas fa-quote-left fa-lg text-warning mb-5"></i>
+                <span className="font-italic display-3 text-light">
+                  Not all of us can do great things. But we can do small things
+                  with great love.
+                </span>
+                <i className="fas fa-quote-right fa-lg text-warning mb-5"></i>
+              </p>
+            </blockquote>
+            <figcaption className="row text-light ml-auto">
+              <span className="col-6"></span>
+              <span className="mr-0 block col-6">-Mother Terressa</span>
+            </figcaption>
+          </figure>
         </div>
-        <div className="carousel-inner">
-          <div className="carousel-item active">
-            <img src={logo} className="d-block w-100" alt="..." />
-          </div>
-          <div className="carousel-item">
-            <img src={logo} className="d-block w-100" alt="..." />
-          </div>
-          <div className="carousel-item">
-            <img src={logo} className="d-block w-100" alt="..." />
-          </div>
-        </div>
-        <button
-          className="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="prev"
-        >
-          <span
-            className="carousel-control-prev-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Previous</span>
-        </button>
-        <button
-          className="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="next"
-        >
-          <span
-            className="carousel-control-next-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Next</span>
-        </button>
       </div>
     </div>
   );

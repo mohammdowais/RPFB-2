@@ -1,8 +1,15 @@
-body{
+/* body{
     background: #bdc3c7;  
     background: -webkit-linear-gradient(to right, #969696, #bdc3c7);  
     background: linear-gradient(to right, #969696, #bdc3c7); 
-}
+} */
+body{
+    background-color:rgb(89, 89, 166);
+    margin:0;
+    font-family:"poppins",sans-serif;
+    font-weight:400;
+    font-size:16px;
+  }
 /*
 .form{
     background-color: white;
