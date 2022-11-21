@@ -31,17 +31,17 @@ export default function ChangePass() {
   const { register, handleSubmit, formState } = useForm(formOptions);
   const { errors } = formState;
   const [setRespX] = useState("");
-  const LOGIN_POST_URL = "http://localhost:8080/api/loginhelper/changepassword";
+  const LOGIN_POST_URL = "http://localhost:8082/api/loginhelper/changepassword";
 
   function onSubmit(angel) {
     console.log(JSON.stringify(angel, null, 4));
 
     axios({
-      method: "post",
+      method: "put",
       url: LOGIN_POST_URL,
       data: {
         // email: angel.email,
-        email: "a@gmail.com",
+        email: "sahilali88084667@gmail.com",
         password: angel.password,
         oldpassword: angel.oldpassword,
       },

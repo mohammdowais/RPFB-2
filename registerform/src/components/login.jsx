@@ -6,7 +6,7 @@ import LoginService from '../services/LoginService'
 import * as Yup from 'yup'
 import axios from 'axios';
 
-const LOGIN_POST_URL ='http://localhost:8081/api/loginhelper/login' 
+const LOGIN_POST_URL ='http://localhost:8082/api/loginhelper/login' 
 let isLoggedin = false;
 const styles = {
   responsive: {
