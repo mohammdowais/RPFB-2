@@ -33,6 +33,11 @@ export default function UpdateProfile() {
       .max(32, "Name should be less than 32 characters")
       .matches(/[A-Z]*/, "Should only contain alphabet"),
 
+    cname: Yup.string()
+      .required("Name is mendatory")
+      .max(32, "Name should be less than 32 characters")
+      .matches(/[A-Z]*/, "Should only contain alphabet"),
+
     email: Yup.string()
       .required("Email is mendatory")
       .matches(/@/, "Must have @ ")
@@ -233,11 +238,11 @@ export default function UpdateProfile() {
                   </div>
                   <div className="col-sm-8 text-secondary">
                     <input
-                      name="name"
+                      name="cname"
                       type="text"
-                      {...register("name")}
+                      {...register("cname")}
                       className={`form-control ${
-                        errors.name ? "is-invalid" : ""
+                        errors.cname ? "is-invalid" : ""
                       }`}
                       placeholder="Enter name"
                     />
