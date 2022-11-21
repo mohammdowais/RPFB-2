@@ -8,7 +8,7 @@ export default function Home() {
         "Not all of us can do great things. But we can do small things with
         great love."
       </div> */}
-      <div className="row mt-5">
+      <div className="row mt-5 mx-auto">
         <div className="ms-5 mt-5 ps-3 col-6 my-auto">
           <figure>
             <blockquote className="blockquote mb-4">
