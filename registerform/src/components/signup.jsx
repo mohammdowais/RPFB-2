@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { Link } from "react-router-dom";
 const styles = {
   responsive: {
     maxWidth: "350px",
@@ -122,7 +123,14 @@ export default function Signup() {
           <p className="text-danger muted">Please Enter Valid Number</p>
         )}
       </div>
-
+      <div className="col-12">
+        <span>
+          Already a user?{" "}
+          <Link to="/login" className="text text-primary text-decoration-none">
+            Login
+          </Link>
+        </span>
+      </div>
       <div className="col-12">
         <button
           type="submit"

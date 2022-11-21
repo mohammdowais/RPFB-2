@@ -9,7 +9,7 @@ export default function Home() {
         great love."
       </div> */}
       <div className="row mt-5 mx-auto">
-        <div className="ms-5 mt-5 ps-3 col-6 my-auto">
+        <div className="ms-lg-5 mt-lg-5 ms-xs-3 ms-md-3 mt-xs-3 mt-md-3 ps-3 col-lg-6  my-auto">
           <figure>
             <blockquote className="blockquote mb-4">
               <p>

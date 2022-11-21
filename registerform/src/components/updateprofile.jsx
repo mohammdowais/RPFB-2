@@ -11,6 +11,7 @@ export default function UpdateProfile() {
   const onSubmit = (data) => {
     console.log(data);
     console.log(data.phoneNumber);
+    console.log(register);
     axios({
       method: "post",
       url: UPDATE_POST_URL,
@@ -47,7 +48,7 @@ export default function UpdateProfile() {
       ),
 
     phoneNumber: Yup.string()
-      .required("Email is mendatory")
+      .required("Phone number is mendatory")
       .matches(/[0-9]{10}/, "Please Enter Valid Phonenumber"),
 
     address: Yup.string()
@@ -62,12 +63,9 @@ export default function UpdateProfile() {
     //   .oneOf([Yup.ref('password')], 'Passwords does not match'),
   });
   const navigate = useNavigate();
-  const navigateMethod = (event) => {
-    navigate("/angelprofile");
-  };
 
   const formOptions = { resolver: yupResolver(formSchema) };
-  const { register, handleSubmit, reset, formState } = useForm(formOptions);
+  const { register, handleSubmit, formState } = useForm(formOptions);
   const { errors } = formState;
   // function onSubmit(data) {
   //   console.log(JSON.stringify(data, null, 4));
@@ -113,7 +111,7 @@ export default function UpdateProfile() {
             </div>
           </div>
 
-          <div className="info p3 col-lg-8 col-md-4  col-xs-12 bg-light rounded">
+          <div className="info p3 col-lg-8 col-md-8  col-xs-12 bg-light rounded">
             <div className="row g-2 mt-3">
               <div className="p-3 col-12 ">
                 <div className="row mb-3">
@@ -271,20 +269,21 @@ export default function UpdateProfile() {
                   </div>
                 </div>
                 <div className="row mb-3">
-                  {/* <div className="col-sm-4">
-                    <h6 className="mb-0">Status</h6>
+                  <div className="col-sm-4">
+                    <h6 className="mb-0">Interest</h6>
                   </div>
                   <div className="col-sm-8 text-secondary">
-                    <input
-                      name=""
-                      type="text"
-                      {...register("")}
-                      className={`form-control ${
-                        errors. ? "is-invalid" : ""
-                      }`}
-                      placeholder="Status..."
-                    />
-                    </div>*/}
+                    <select
+                      name="interest"
+                      class="form-select form-select"
+                      aria-label=".form-select-sm example"
+                    >
+                      <option selected>Child Welfare</option>
+                      <option value="Student Welfare">Student Welfare</option>
+                      <option value="Social Welfare">Social Welfare</option>
+                      <option value="Environmentalist">Environmentalist</option>
+                    </select>
+                  </div>
                 </div>
                 <div className="row mb-3 p-0">
                   <div className="col-lg-2 mx-auto mt-1">
