@@ -14,7 +14,7 @@ export default function Home() {
             <blockquote className="blockquote mb-4">
               <p>
                 <i className="fas fa-quote-left fa-lg text-warning mb-5"></i>
-                <span className="font-italic display-3 text-light">
+                <span className="font-italic display-5 text-light">
                   Not all of us can do great things. But we can do small things
                   with great love.
                 </span>
