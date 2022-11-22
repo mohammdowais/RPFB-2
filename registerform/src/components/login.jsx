@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import LoginService from "../services/LoginService";
 import * as Yup from "yup";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const LOGIN_POST_URL = "http://localhost:8080/api/loginhelper/login";
@@ -39,7 +40,7 @@ export default function Login() {
       ),
   });
   const formOptions = { resolver: yupResolver(formSchema) };
-  const { register, handleSubmit, reset, formState } = useForm(formOptions);
+  const { register, handleSubmit, formState } = useForm(formOptions);
   const { errors } = formState;
 
   const [respX, setRespX] = useState("");
@@ -110,10 +111,25 @@ export default function Login() {
           <div className="invalid-feedback">{errors.password?.message}</div>
         </div>
         <div className="col-12">
+          <span>
+            Don't have and account?{" "}
+            <Link
+              to="/signup"
+              className="text text-primary text-decoration-none"
+            >
+              Signup
+            </Link>
+            <br />
+            or{" "}
+            <Link to="/" className="text text-primary text-decoration-none">
+              Forgot Password?
+            </Link>
+          </span>
+        </div>
+        <div className="col-12">
           <button
             type="submit"
-            className="btn btn-primary btn-block"
-            // onClick={navigateMethod}
+            className="btn btn-primary btn-block my-1 form-control"
           >
             Login
           </button>

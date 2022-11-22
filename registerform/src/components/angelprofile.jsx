@@ -97,7 +97,7 @@ export default function Profile() {
         </div>
 
         {/* basic info display */}
-        <div className="info p3 col-lg-8 col-md-4 col-xs-12 bg-light rounded">
+        <div className="info p3 col-lg-8 col-md-8 col-xs-12 bg-light rounded">
           <div className="row g-2 mt-3">
             <div className="p-3 col-12 ">
               <div className="row mb-3 mt-3">
