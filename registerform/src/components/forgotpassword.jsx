@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 const FORGET_PASS_URL = "http://localhost:8080/api/loginhelper/forgetpassword";
-const mailSend = false
+let mailSend = false
 const styles = {
   responsive: {
     maxWidth: "350px",
@@ -34,25 +34,28 @@ export default function Forgot() {
 
   const onSubmit = (angel) => {
     axios({
-      method: "get",
+      method: "post",
       url: FORGET_PASS_URL,
       data: {
         email: angel.email,
       },
     }).then((res) => {
-      console.log(" in " + res.data);
-      if (res.data == "Mail Send") {
-        alert("Email has been send with your new Password")
-        navigate("/login");
-      } else {
-        console.log(mailSend + "login is this");
+      // console.log(" in " + res.data);
+      if (res.data == "Mail send") {
+        // alert("Email has been send with your new Password")
+        // console.log(" in side true block" + res.data);
+        // navigate("/login");
         mailSend = true;
-        console.log(mailSend + "login is this");
+        console.log(mailSend + "not send");
+      } else {
+        // mailSend = true;
+        // console.log(mailSend + "not send");
+        alert("Mail has been send with your Password")
+        console.log(" in side true block" + res.data);
+        navigate("/login");
       }
       setRespX(res.data);
     });
-    console.log(" out result " + respX);
-    console.log("respx out" + respX);
   };
   return (
     <div>

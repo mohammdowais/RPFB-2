@@ -45,7 +45,7 @@ export default function ChangePass() {
     console.log(JSON.stringify(angel, null, 4));
 
     axios({
-      method: "put",
+      method: "post",
       url: FORGOT_PUT_URL,
       data: {
         // email: angel.email,
