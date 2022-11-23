@@ -6,6 +6,7 @@ import Signup from "./signup";
 import Profile from "./angelprofile";
 import ChangePass from "./changepassword";
 import UpdateProfile from "./updateprofile";
+import Forgot from "./forgotpassword";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 export default function Header() {
@@ -68,6 +69,7 @@ export default function Header() {
           <Route exact path="/" element={<Home />} />
           <Route path="/changepassword" element={<ChangePass />} />
           <Route path="/updateprofile" element={<UpdateProfile />} />
+          <Route path="/forgot" element={<Forgot />} />
         </Routes>
       </Router>
     </div>

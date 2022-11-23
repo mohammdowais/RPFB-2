@@ -6,32 +6,17 @@ import LoginService from "../services/LoginService";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import Forgot from "./forgotpassword";
 
-const LOGIN_POST_URL = "http://localhost:8080/api/loginhelper/login";
-let isLoggedin = false;
+const FORGET_PASS_URL = "http://localhost:8080/api/loginhelper/forgetpassword";
+const mailSend = false
 const styles = {
   responsive: {
     maxWidth: "350px",
     width: "100%",
   },
 };
-export default function Login() {
+export default function Forgot() {
   const formSchema = Yup.object().shape({
-    password: Yup.string()
-      .required("Password is mendatory")
-      .max(32, "Password should be less than 32 characters")
-      .matches(
-        /[.*[A-Z].*]{0,}/,
-        "Must Contain at least one Uppercase Character"
-      )
-      .matches(
-        /[.*[a-z].*]{0,}/,
-        "Must Contain at least one Lowercase Character"
-      )
-      .matches(/[.*[0-9].*]{0,}/, "Must Contain at least one Number Character")
-      .min(5, "Password must be at 5 char long"),
-
     email: Yup.string()
       .required("Email is mendatory")
       .matches(/@/, "Must have @ ")
@@ -49,20 +34,20 @@ export default function Login() {
 
   const onSubmit = (angel) => {
     axios({
-      method: "post",
-      url: LOGIN_POST_URL,
+      method: "get",
+      url: FORGET_PASS_URL,
       data: {
         email: angel.email,
-        password: angel.password,
       },
     }).then((res) => {
       console.log(" in " + res.data);
-      if (res.data == "Login SuccessFull") {
-        navigate("/angelprofile");
+      if (res.data == "Mail Send") {
+        alert("Email has been send with your new Password")
+        navigate("/login");
       } else {
-        console.log(isLoggedin + "login is this");
-        isLoggedin = true;
-        console.log(isLoggedin + "login is this");
+        console.log(mailSend + "login is this");
+        mailSend = true;
+        console.log(mailSend + "login is this");
       }
       setRespX(res.data);
     });
@@ -71,9 +56,9 @@ export default function Login() {
   };
   return (
     <div>
-      {isLoggedin && (
+      {mailSend && (
         <div className="col-4 mx-auto  mt-3 mb-0 alert alert-danger">
-          Invalid Email/Password
+          Invalid Email<br/>Please Enter registered Email
           <br />
           {/* If you are New User Register instead */}
         </div>
@@ -85,7 +70,7 @@ export default function Login() {
         className="row gy-3 bg-light p-3 mx-auto mt-5 rounded  novalidate"
       >
         <div className="form-group col-12 mb-3 mt-4">
-          <h4>Login</h4>
+          <h4>Forgot Password</h4>
         </div>
 
         <div className="form-group col-12">
@@ -100,39 +85,13 @@ export default function Login() {
           <div className="invalid-feedback">{errors.email?.message}</div>
         </div>
 
-        <div className="form-group col-12">
-          <label>Password</label>
-          <input
-            name="password"
-            type="password"
-            {...register("password")}
-            className={`form-control ${errors.password ? "is-invalid" : ""}`}
-            placeholder="Enter password"
-          />
-          <div className="invalid-feedback">{errors.password?.message}</div>
-        </div>
-        <div className="col-12">
-          <span>
-            Don't have and account?{" "}
-            <Link
-              to="/signup"
-              className="text text-primary text-decoration-none"
-            >
-              Signup
-            </Link>
-            <br />
-            or{" "}
-            <Link to="/Forgot" className="text text-primary text-decoration-none">
-              Forgot Password?
-            </Link>
-          </span>
-        </div>
+        
         <div className="col-12">
           <button
             type="submit"
             className="btn btn-primary btn-block my-1 form-control"
           >
-            Login
+            Send Email
           </button>
         </div>
       </form>
