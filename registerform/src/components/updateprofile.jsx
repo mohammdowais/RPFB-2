@@ -16,7 +16,16 @@ export default function UpdateProfile() {
       method: "post",
       url: UPDATE_POST_URL,
       data: {
-        email: data.emailId,
+        ahEmail: data.emailId,
+        ahName: data.name,
+        ahProfession:data.profession,
+        ahAddress:data.address ,
+        // Type: ,
+        ahContactPersonName:data.phone,
+        ahPinCode:data.pin,
+        ahContactPersonName:data.contactPerson,
+        ahQualification:data.qualification,
+        ahInterest:data.interest,
       },
     }).then((res) => {
       console.log(" in " + res.data);
