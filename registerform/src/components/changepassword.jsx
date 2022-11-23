@@ -24,6 +24,14 @@ export default function ChangePass() {
     confirmpassword: Yup.string()
       .required("Password is mendatory")
       .oneOf([Yup.ref("password")], "Passwords does not match"),
+    
+      email: Yup.string()
+      .required("Email is mendatory")
+      .matches(/@/, "Must have @ ")
+      .matches(
+        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+        "Please Enter a valid email"
+      ),
   });
 
   const navigate = useNavigate();
@@ -41,7 +49,7 @@ export default function ChangePass() {
       url: FORGOT_PUT_URL,
       data: {
         // email: angel.email,
-        email: "sahilali88084667@gmail.com",
+        email: angel.email,
         password: angel.password,
         oldpassword: angel.oldpassword,
       },
@@ -69,6 +77,17 @@ export default function ChangePass() {
       >
         <div className="form-group col-12 mb-3 mt-3">
           <h4>Change Password</h4>
+        </div>
+        <div className="form-group col-12">
+          <label>Email</label>
+          <input
+            name="email"
+            type="email"
+            {...register("email")}
+            className={`form-control ${errors.password ? "is-invalid" : ""}`}
+            placeholder="Enter Registered Email"
+          />
+          <div className="invalid-feedback">{errors.password?.message}</div>
         </div>
         <div className="form-group col-12">
           <label>Old Password</label>
