@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
+import swal from "sweetalert";
 import * as Yup from "yup";
 
 export default function ChangePass() {
@@ -39,24 +40,29 @@ export default function ChangePass() {
   const { register, handleSubmit, formState } = useForm(formOptions);
   const { errors } = formState;
   const [setRespX] = useState("");
-  const FORGOT_PUT_URL = "http://localhost:8080/api/loginhelper/changepassword";
+  const CHANGE_PASS_URL = "http://localhost:8080/api/loginhelper/changepassword";
 
   function onSubmit(angel) {
     console.log(JSON.stringify(angel, null, 4));
 
     axios({
       method: "post",
-      url: FORGOT_PUT_URL,
+      url: CHANGE_PASS_URL,
       data: {
         // email: angel.email,
         email: angel.email,
-        password: angel.password,
-        oldpassword: angel.oldpassword,
+        new_password: angel.password,
+        old_password: angel.oldpassword,
       },
     }).then((res) => {
       console.log(" in " + res.data);
       if (res.data === "Password changed") {
         navigate("/angelprofile");
+        swal({
+          title: "Password Changed",
+          text: "Your password has been changed",
+          icon: "success",
+        });
       } else {
         console.log("login is this");
       }

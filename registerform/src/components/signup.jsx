@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import swal from 'sweetalert';
 import { Link } from "react-router-dom";
 const styles = {
   responsive: {
@@ -32,7 +33,12 @@ export default function Signup() {
     }).then((res) => {
       console.log(" in " + res.data);
       if (res.data === "Signup Successfull") {
-        alert("Login Password has been send to email");
+        // alert("Login Password has been send to email");
+        swal({
+          title: "Email sent",
+          text: "Check Your email for Login details",
+          icon: "success",
+        });
         navigate("/login");
       } else {
         console.log("Looks Like you are already a user please signup again");

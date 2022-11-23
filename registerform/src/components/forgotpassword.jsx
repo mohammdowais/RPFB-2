@@ -6,6 +6,7 @@ import LoginService from "../services/LoginService";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import swal from 'sweetalert';
 
 const FORGET_PASS_URL = "http://localhost:8080/api/loginhelper/forgetpassword";
 let mailSend = false
@@ -50,7 +51,13 @@ export default function Forgot() {
       } else {
         // mailSend = true;
         // console.log(mailSend + "not send");
-        alert("Mail has been send with your Password")
+        // alert("Mail has been send with your Password")
+        // swal("Mail has been send with your Password","success")
+        swal({
+          title: "Email Sent",
+          text: "Check Your Email for login details",
+          icon: "success",
+        });
         console.log(" in side true block" + res.data);
         navigate("/login");
       }
